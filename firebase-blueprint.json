@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "VotesState": {
+      "title": "VotesState",
+      "description": "State of all votes for the group",
+      "type": "object",
+      "properties": {
+        "votes": {
+          "type": "object",
+          "description": "Map of user names to array of hostel IDs"
+        }
+      },
+      "required": ["votes"]
+    }
+  },
+  "firestore": {
+    "/votesState/{docId}": {
+      "schema": { "$ref": "#/entities/VotesState" },
+      "description": "Stores the votes state for a specific group"
+    }
+  }
+}
